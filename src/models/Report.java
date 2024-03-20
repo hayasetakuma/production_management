@@ -29,7 +29,7 @@ public class Report {
     private String product_name;
 
     @Column(name = "product_number", nullable = false)
-    private Integer product_number;
+    private String product_number;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -53,11 +53,11 @@ public class Report {
         this.product_name = product_name;
     }
 
-    public Integer getProduct_number() {
+    public String getProduct_number() {
         return product_number;
     }
 
-    public void setProduct_number(Integer product_number) {
+    public void setProduct_number(String product_number) {
         this.product_number = product_number;
     }
 
