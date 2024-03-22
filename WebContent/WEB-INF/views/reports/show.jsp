@@ -7,7 +7,8 @@
         <h2>日報詳細</h2>
 
         <p>製品名：<c:out value="${report.product_name}" /></p>
-        <p>生産数：<c:out value="${report.product_number}" /></p>
+        <p>良品生産数：<c:out value="${report.product_number}" /></p>
+        <p>不良品生産数：<c:out value="${report.defective_product}" /></p>
         <p>作成日時：<fmt:formatDate value="${report.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
         <p>更新日時：<fmt:formatDate value="${report.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
 

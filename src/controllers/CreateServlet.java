@@ -40,10 +40,12 @@ public class CreateServlet extends HttpServlet {
 
             String product_name = request.getParameter("product_name");
             r.setProduct_name(product_name);
-            
+
             String product_number = request.getParameter("product_number");
             r.setProduct_number(product_number);
 
+            String defective_product = request.getParameter("defective_product");
+            r.setDefective_product(defective_product);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);

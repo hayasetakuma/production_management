@@ -9,7 +9,7 @@
                     <a href="${pageContext.request.contextPath}/show?id=${report.id}">
                         <c:out value="${report.id}" />
                     </a>
-                    ：<c:out value="${report.product_name}"></c:out> &gt; <c:out value="${report.product_number}" />
+                    ：<c:out value="${report.product_name}"></c:out> &gt; <c:out value="${report.product_number}" /> &gt; <c:out value="${report.defective_product}" />
                 </li>
             </c:forEach>
         </ul>

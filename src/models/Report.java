@@ -31,6 +31,9 @@ public class Report {
     @Column(name = "product_number", nullable = false)
     private String product_number;
 
+    @Column(name = "defective_product", nullable = false)
+    private String defective_product;
+
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
@@ -59,6 +62,14 @@ public class Report {
 
     public void setProduct_number(String product_number) {
         this.product_number = product_number;
+    }
+
+    public String getDefective_product() {
+        return defective_product;
+    }
+
+    public void setDefective_product(String defective_product) {
+        this.defective_product = defective_product;
     }
 
     public Timestamp getCreated_at() {
