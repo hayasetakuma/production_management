@@ -11,10 +11,10 @@
         <ul>
             <c:forEach var="report" items="${reports}">
                 <li>
+                    <c:out value="${report.product_name}"></c:out> &gt; <c:out value="${report.product_number}" /> &gt; <c:out value="${report.defective_product}" />
                     <a href="${pageContext.request.contextPath}/show?id=${report.id}">
-                       <c:out value="${report.id}"/>
+                       <c:out value="詳細"/>
                     </a>
-                    ：<c:out value="${report.product_name}"></c:out> &gt; <c:out value="${report.product_number}" /> &gt; <c:out value="${report.defective_product}" />
                 </li>
             </c:forEach>
         </ul>
