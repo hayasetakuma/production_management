@@ -8,16 +8,25 @@
             </div>
         </c:if>
         <h2>日報一覧</h2>
-        <ul>
-            <c:forEach var="report" items="${reports}">
-                <li>
-                    <c:out value="${report.product_name}"></c:out> &gt; <c:out value="${report.product_number}" /> &gt; <c:out value="${report.defective_product}" />
-                    <a href="${pageContext.request.contextPath}/show?id=${report.id}">
-                       <c:out value="詳細"/>
-                    </a>
-                </li>
-            </c:forEach>
-        </ul>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>製品名</th>
+                            <th>良品生産数</th>
+                            <th>不良品生産数</th>
+                            <th>詳細表示</th>
+                        </tr>
+                        <c:forEach var="report" items="${reports}">
+                         <tr>
+                            <td><c:out value="${report.product_name}" /></td>
+                            <td><c:out value="${report.product_number}" /></td>
+                            <td><c:out value="${report.defective_product}" /></td>
+                            <td><a href="${pageContext.request.contextPath}/show?id=${report.id}"><c:out value="詳細"/></a></td>
+                        </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+
         <div id="pagination">
             （全 ${reports_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((reports_count - 1) / 15) + 1}" step="1">
