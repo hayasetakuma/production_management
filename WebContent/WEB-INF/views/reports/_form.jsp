@@ -13,11 +13,11 @@
 <input type="text" name="product_name" id="product_name" value="${report.product_name}" />
 <br /><br />
 
-<label for="product_number">良品生産数</label><br />
+<label for="product_number">良品生産数</label><span>《半角数字》</span><br />
 <input type="text" name="product_number" id="product_number" value="${report.product_number}" />
 <br /><br />
 
-<label for="defective_product">不良品生産数</label><br />
+<label for="defective_product">不良品生産数</label><span>《半角数字》</span><br />
 <input type="text" name="defective_product" id="defective_product" value="${report.defective_product}" />
 <br /><br />
 
