@@ -2,6 +2,8 @@ package models.validators;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import models.Report;
 
@@ -23,6 +25,16 @@ public class ReportValidator {
         String defective_product_error = validateDefective_product(r.getDefective_product());
         if(!defective_product_error.equals("")) {
             errors.add(defective_product_error);
+        }
+
+        String alphanum_good_error = isAlphanumGood(r.getProduct_number());
+        if(!alphanum_good_error.equals("")) {
+            errors.add(alphanum_good_error);
+        }
+
+        String alphanum_defective_error = isAlphanumDefective(r.getDefective_product());
+        if(!alphanum_defective_error.equals("")) {
+            errors.add(alphanum_defective_error);
         }
 
         return errors;
@@ -52,5 +64,27 @@ public class ReportValidator {
         }
 
         return "";
+    }
+
+    private static String isAlphanumGood(String product_number) {
+        String alphanum = "^[0-9]*$";
+        Pattern p1 = Pattern.compile(alphanum);
+        Matcher m1 = p1.matcher(product_number);
+        boolean result1 = m1.matches();
+        if(result1 == false) {
+            return "良品生産数を半角数字で入力してください。";
+        }
+        return"";
+    }
+
+    private static String isAlphanumDefective(String defective_product) {
+        String alphanum = "^[0-9]*$";
+        Pattern p1 = Pattern.compile(alphanum);
+        Matcher m1 = p1.matcher(defective_product);
+        boolean result1 = m1.matches();
+        if(result1 == false) {
+            return "不良品生産数を半角数字で入力してください。";
+        }
+        return"";
     }
 }
