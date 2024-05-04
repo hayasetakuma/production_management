@@ -9,13 +9,15 @@
         </c:if>
         <h2>日報一覧</h2>
                 <table>
-                    <tbody>
+                    <thead>
                         <tr>
                             <th>製品名</th>
                             <th>良品生産数</th>
                             <th>不良品生産数</th>
                             <th>詳細表示</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <c:forEach var="report" items="${reports}">
                          <tr>
                             <td><c:out value="${report.product_name}" /></td>
